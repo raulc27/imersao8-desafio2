@@ -8,8 +8,10 @@ import {
     Grid,
     Card,
     CardHeader,
-    CardContent
+    CardContent,
+
 } from '@mui/material'
+
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
@@ -21,13 +23,13 @@ import {
 } from 'react-router-dom';
 import api from '../services/api';
 import LoadingGIF from '../assets/Loading.gif';
-import {useParams} from 'react-router-dom'
+import { useParams } from 'react-router-dom'; 
 
 const SinglePost = (props) => {
     const [Post, setPost] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const params = useParams();
-    
+
     async function getThePostData() {
         try {
             setIsLoading(true);
@@ -40,27 +42,32 @@ const SinglePost = (props) => {
         }
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         getThePostData()
-        console.log('Post: ',Post)
-    },[])
+    }, [])
     return (
         <>
-            
-              
-                   
-                   <Card>
-                   <List>
-                    <ListItem>
-                    {Post.title}
-                    </ListItem>                
-                    <ListItem>
-                    {Post.body}
-                    </ListItem>
+
+            <Grid item xs={7}>
+                <RouterLink to="/">
+                    <CardHeader
+                        title="Voltar"
+                    />
+                </RouterLink>
+
+
+                <Card>
+                    <List>
+                        <ListItem>
+                            {Post.title}
+                        </ListItem>
+                        <ListItem>
+                            {Post.body}
+                        </ListItem>
                     </List>
-                   </Card>
-              
-            
+                </Card>
+
+            </Grid>
         </>
     )
 }
