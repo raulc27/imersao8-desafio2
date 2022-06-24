@@ -18,6 +18,7 @@ import Divider from '@mui/material/Divider';
 import InboxIcon from '@mui/icons-material/Inbox';
 import DraftsIcon from '@mui/icons-material/Drafts';
 import Typography from '@mui/material/Typography';
+import CircularProgress from '@mui/material/CircularProgress';
 import {
     Link as RouterLink,
 } from 'react-router-dom';
@@ -55,6 +56,9 @@ const SinglePost = (props) => {
                     />
                 </RouterLink>
 
+                <Box>
+                    {isLoading && (<CircularProgress/>)}
+                    </Box>
 
                 <Card>
                     <List>

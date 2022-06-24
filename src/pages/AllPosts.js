@@ -4,6 +4,8 @@ import List from '@mui/material/List';
 import Box from '@mui/material/Box';
 import ListItem from '@mui/material/ListItem';
 import Paper from '@mui/material/Paper';
+import CircularProgress from '@mui/material/CircularProgress';
+
 import {
     Grid,
     Card,
@@ -47,6 +49,9 @@ export default function AllPosts() {
 
     return (
         <>
+            <Box>
+                        { isLoading && (<CircularProgress/>)   }
+                            </Box>
             <Card>
                 <Paper>
                     <Box>
