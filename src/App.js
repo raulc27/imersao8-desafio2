@@ -1,14 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import Router from './routes';
+import React from 'react';
+import { CssBaseline } from "@mui/material";
+import { ThemeProvider } from '@mui/material/styles';
+import theme from "./theme";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-       <p>Eita... </p>
-      </header>
-    </div>
-  );
+const App = () => {
+    return (
+        <ThemeProvider theme={theme}>
+                <CssBaseline />
+                <Router/>
+        </ThemeProvider>
+    )
 }
-
 export default App;
