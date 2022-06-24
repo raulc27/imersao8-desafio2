@@ -1,4 +1,4 @@
-import Router from './routes';
+import Routing from './routes';
 import React from 'react';
 import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from '@mui/material/styles';
@@ -8,7 +8,7 @@ const App = () => {
     return (
         <ThemeProvider theme={theme}>
                 <CssBaseline />
-                <Router/>
+                <Routing/>
         </ThemeProvider>
     )
 }
